@@ -16,7 +16,7 @@ cp -r exUsage/* .
 bash src/batchData.sh
 ```
 
-In the output directory, there will be a separate file for each named starting barcode and ending barcode. 
+In the created output directory, there will be a separate file for each named starting barcode and ending barcode. You can see that there are two samples tagged with barcodes N707 and S507, and they will both be written to the same file. 
 
 ## Advanced usage 
 
