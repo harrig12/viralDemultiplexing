@@ -23,12 +23,15 @@ done
 finalDir="step2"
 
 for file in $tmpDir/*; do
-	echo "processing file $file ..."
+
 	p=$(echo $file | cut -f1 -d. | cut -f2 -d/)
+	file="${tmpDir}/${p}/${p}.fastq"
+	
+	echo "processing file $file ..."
 	bash src/demultiplex.sh -prefix "${p}_" -in ${file} -out ${finalDir} -a "annotation/barcodes_step2.txt" 
 done
 
-rm -rf step1
-mv step2 output
+rm -rf $tmpDir
+mv $finalDir output
 
 # [END]
