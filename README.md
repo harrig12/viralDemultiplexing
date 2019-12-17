@@ -11,9 +11,21 @@ Try it out:
 git clone https://github.com/harrig12/viralDemultiplexing.git
 cd viralDemultiplexing
 
+# Run on the example data as a batch
 cp -r exUsage/* .
 bash src/batchData.sh
 ```
 
 In the output directory, there will be a separate file for each named starting barcode and ending barcode. 
 
+## Advanced usage 
+
+`demultiplex.sh` can be called directly with the following flags
+
+```
+-a (annotation) file to use as barcode annotation
+-in (in file) fastq file with reads to demultiplex
+-out (out destination) directory to output resulting files to
+-prefix (file name prefix) appended to front of result file name
+-header (true or false) whether the barcode annotation file has a header or not (default true)
+```
