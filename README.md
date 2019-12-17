@@ -20,7 +20,7 @@ In the created output directory, there will be a separate file for each named st
 
 ## Advanced usage 
 
-`demultiplex.sh` can be called directly with the following flags
+`demultiplex.sh` can be run directly with the following flags
 
 ```
 -a (annotation) file to use as barcode annotation
