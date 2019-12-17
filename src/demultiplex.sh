@@ -28,9 +28,6 @@ firstLine=true
 # possibly overwrite defaults with cmd flags
 source "src/flagHandling.sh"
 
-# make outdir if missing
-mkdir -p $outDir
-
 while read -u 19 line; do
 
 	# exclude the header if present
@@ -48,7 +45,8 @@ while read -u 19 line; do
 	echo "processing barcode $name ..."
 
 	# name output file
-	outputFile="${outDir}/${prefix}${name}.fastq"
+	mkdir -p "${outDir}/${prefix}${name}"
+	outputFile="${outDir}/${prefix}${name}/${prefix}${name}.fastq"
 
 	#search the forward barcode and print to output file
 	fwdHits=($(grep -n "$fwd" $inputFile | cut -f1 -d:))
